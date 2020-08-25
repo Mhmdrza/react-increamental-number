@@ -1,0 +1,19 @@
+{
+  "name": "react-number-animator",
+  "version": "1.0.0",
+  "description": "A small component to animate a number increment/decrement with requestAnimationFrame",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "react",
+    "numbers",
+    "requestAnimationFrame"
+  ],
+  "author": "Mohammad reza Ala",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^16.13.1"
+  }
+}
