@@ -1,26 +1,34 @@
-import React, {useEffect} from 'react';
+import * as React from 'react';
+
+interface IProps {
+    value: number
+    totalSteps?: number
+    className?: string
+    outputFormatter?: (arg: any) => any
+}
 
 const RafNumberLexicalHolder = (() => {
     if(typeof window.requestAnimationFrame === "function") {
         let prevValue = 0;
-        return ({value = 0, totalSteps = 10, className = ""}) => {
-            let prevRafRef;
-            const ref = useRef();
+        return ({value = 0, totalSteps = 10, className = "", outputFormatter = (v) => v}: IProps) => {
+            let prevRafRef: number;
+            const ref = React.useRef(null);
             const range = value - prevValue;
             let counter = 0;
             function callback () {
                 if ( counter < totalSteps ) {
                     counter += 1;
                     prevValue += (range/totalSteps);
-                    ref.current.textContent = commaSperator(NumbersToPersian(prevValue.toFixed(0)));
+                    //@ts-ignore
+                    ref.current.textContent = outputFormatter(prevValue.toFixed(0));
                     prevRafRef = requestAnimationFrame(callback);
                 } else {
-                    // ref.current.textContent = midValue;
-                    ref.current.textContent = commaSperator(NumbersToPersian(value.toFixed(0)));
+                    //@ts-ignore
+                    ref.current.textContent = outputFormatter(value.toFixed(0));
                     cancelAnimationFrame(prevRafRef);
                 }
             }
-            useEffect(() => {
+            React.useEffect(() => {
                 prevRafRef = requestAnimationFrame(callback);
                 return () => {
                     if(prevRafRef) {
@@ -31,10 +39,12 @@ const RafNumberLexicalHolder = (() => {
             return <span ref={ref} className={className}></span>
         };
     }else {
-        return ({value = 0 }) => <span className={className}>{value}</span>
+        return ({
+            value = 0,
+            className = "",
+            outputFormatter = (v) => v 
+        }: IProps) => <span className={className}>{outputFormatter(value)}</span>
     }
 });
 
-const RafNumberCounter = RafNumberLexicalHolder();
-
-module.exports = RafNumberCounter
+export const RafNumberCounter = RafNumberLexicalHolder();
