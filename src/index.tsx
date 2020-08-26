@@ -20,11 +20,11 @@ const RafNumberLexicalHolder = (() => {
                     counter += 1;
                     prevValue += (range/totalSteps);
                     //@ts-ignore
-                    ref.current.textContent = outputFormatter(prevValue.toFixed(0));
+                    ref.current.textContent = outputFormatter(prevValue);
                     prevRafRef = requestAnimationFrame(callback);
                 } else {
                     //@ts-ignore
-                    ref.current.textContent = outputFormatter(value.toFixed(0));
+                    ref.current.textContent = outputFormatter(value);
                     cancelAnimationFrame(prevRafRef);
                 }
             }
