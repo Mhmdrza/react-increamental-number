@@ -6,4 +6,4 @@ interface IProps {
     outputFormatter?: (arg: any) => any;
 }
 export declare const RafNumberCounter: ({ value, totalSteps, className, outputFormatter }: IProps) => JSX.Element;
-export {};
+export default RafNumberCounter;

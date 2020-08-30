@@ -41,3 +41,4 @@ var RafNumberLexicalHolder = (function () {
     }
 });
 export var RafNumberCounter = RafNumberLexicalHolder();
+export default RafNumberCounter;
