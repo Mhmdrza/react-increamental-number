@@ -13,12 +13,12 @@ var RafNumberLexicalHolder = (function () {
                     counter += 1;
                     prevValue_1 += (range / totalSteps);
                     //@ts-ignore
-                    ref.current.textContent = outputFormatter(prevValue_1.toFixed(0));
+                    ref.current.textContent = outputFormatter(prevValue_1);
                     prevRafRef = requestAnimationFrame(callback);
                 }
                 else {
                     //@ts-ignore
-                    ref.current.textContent = outputFormatter(value.toFixed(0));
+                    ref.current.textContent = outputFormatter(value);
                     cancelAnimationFrame(prevRafRef);
                 }
             }
