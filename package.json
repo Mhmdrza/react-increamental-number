@@ -1,6 +1,6 @@
 {
   "name": "react-number-animator",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A small component to animate a number increment/decrement with requestAnimationFrame",
   "main": "dist/index.js",
   "scripts": {
@@ -14,11 +14,12 @@
   "author": "Mohammad reza Ala",
   "license": "ISC",
   "homepage": "https://github.com/Mhmdrza/react-increamental-number",
-  "dependencies": {
-    "@types/react": "^16.9.47",
-    "react": "^16.13.1"
+  "peerDependencies": {
+    "react": "^16.8.1"
   },
   "devDependencies": {
+    "@types/react": "^16.8.1",
+    "react": "^16.8.1",
     "typescript": "^4.0.2"
   }
 }
