@@ -16,6 +16,9 @@ demo source : [codesandbox](https://codesandbox.io/s/intelligent-kalam-bfzz5?fil
 2. Import `import SmoothNumber from "react-number-animator"`;
 3. place it where it is intended like: `<SmoothNumber value={/*sth*/} />`
 
+> Attention: each release comes with `-compact` version which doesn't include `readme.md` thus 
+half size of regualr package; and can be installed manually using latest version number plus `-compact` for example `yarn add react-number-animator@1.1.4@compact`
+
 ## Props:
 | name| type | Required| default|
 |-----|------|---------|--------|
@@ -48,4 +51,5 @@ it will fall back to a raw `<span>` without any animation just its value.
 <span className={className}>{outputFormatter(value)}</span>
 ```
 ## Package size: 
-About ~2Kb
+About `~2Kb` packed and compact version is about `~1kb`
+
