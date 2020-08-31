@@ -2,7 +2,7 @@
 
 A tiny package that animates a **number** increment/decrement on value change for a **smooth transition**; 
 
-[**Live demo**](https://bfzz5.csb.app/),    
+**[Live demo](https://bfzz5.csb.app/)**    
 demo source : [codesandbox](https://codesandbox.io/s/intelligent-kalam-bfzz5?file=/src/App.js)
 
 
@@ -20,13 +20,11 @@ demo source : [codesandbox](https://codesandbox.io/s/intelligent-kalam-bfzz5?fil
 
 ## How to use?
 
-1. 
-
-`npm i react-number-animator`;
-2. `import NumberAnimator from "react-number-animator"`;
+1. Install `yarn add react-number-animator` or `npm i react-number-animator`;
+2. Import `import SmoothNumber from "react-number-animator"`;
 3. place it where it is intended like:
 
-`<NumberAnimator value={/*sth*/} />`
+`<SmoothNumber value={/*sth*/} />`
 
 
 
@@ -52,9 +50,9 @@ demo source : [codesandbox](https://codesandbox.io/s/intelligent-kalam-bfzz5?fil
 
 ## Example:
 ```jsx
-import RafNumberCounter from "react-number-animator";
+import SmoothNumber from "react-number-animator";
 
-<RafNumberCounter 
+<SmoothNumber 
   value={/* somValue */} 
   totalSteps={15}
   outputFormatter={(v) => commaSperator(v)}
