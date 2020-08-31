@@ -1,6 +1,6 @@
 {
   "name": "react-number-animator",
-  "version": "1.1.3",
+  "version": "1.1.4",
   "description": "A small component to animate a number increment/decrement with requestAnimationFrame",
   "main": "dist/index.js",
   "scripts": {
