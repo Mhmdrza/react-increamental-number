@@ -1,6 +1,6 @@
-import * as React from 'react';
-var RafNumberLexicalHolder = (function () {
-    if (typeof window.requestAnimationFrame === "function") {
+import * as React from "react";
+var RafNumberLexicalHolder = function () {
+    if ('requestAnimationFrame' in window) {
         var prevValue_1 = 0;
         return function (_a) {
             var _b = _a.value, value = _b === void 0 ? 0 : _b, _c = _a.totalSteps, totalSteps = _c === void 0 ? 10 : _c, _d = _a.className, className = _d === void 0 ? "" : _d, _e = _a.outputFormatter, outputFormatter = _e === void 0 ? function (v) { return v; } : _e;
@@ -11,14 +11,14 @@ var RafNumberLexicalHolder = (function () {
             function callback() {
                 if (counter < totalSteps) {
                     counter += 1;
-                    prevValue_1 += (range / totalSteps);
+                    prevValue_1 += range / totalSteps;
                     //@ts-ignore
-                    ref.current.textContent = outputFormatter(prevValue_1.toFixed(0));
+                    ref.current.textContent = outputFormatter((prevValue_1.toFixed(0)) * 1);
                     prevRafRef = requestAnimationFrame(callback);
                 }
                 else {
                     //@ts-ignore
-                    ref.current.textContent = outputFormatter(value.toFixed(0));
+                    ref.current.textContent = outputFormatter(value * 1);
                     cancelAnimationFrame(prevRafRef);
                 }
             }
@@ -39,6 +39,6 @@ var RafNumberLexicalHolder = (function () {
             return React.createElement("span", { className: className }, outputFormatter(value));
         };
     }
-});
-export var RafNumberCounter = RafNumberLexicalHolder();
+};
+var RafNumberCounter = RafNumberLexicalHolder();
 export default RafNumberCounter;

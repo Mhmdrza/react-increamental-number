@@ -4,11 +4,11 @@ interface IProps {
   value: number;
   totalSteps?: number;
   className?: string;
-  outputFormatter?: (arg: any) => any;
+  outputFormatter?: (arg: number) => string|number;
 }
 
 const RafNumberLexicalHolder = () => {
-  if (typeof window.requestAnimationFrame === "function") {
+  if ('requestAnimationFrame' in window) {
     let prevValue = 0;
     return ({
       value = 0,
@@ -25,11 +25,11 @@ const RafNumberLexicalHolder = () => {
           counter += 1;
           prevValue += range / totalSteps;
           //@ts-ignore
-          ref.current.textContent = outputFormatter(prevValue.toFixed(0));
+          ref.current.textContent = outputFormatter((prevValue.toFixed(0)) * 1);
           prevRafRef = requestAnimationFrame(callback);
         } else {
           //@ts-ignore
-          ref.current.textContent = outputFormatter(value.toFixed(0));
+          ref.current.textContent = outputFormatter(value * 1);
           cancelAnimationFrame(prevRafRef);
         }
       }
