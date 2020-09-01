@@ -17,7 +17,7 @@ demo source : [codesandbox](https://codesandbox.io/s/intelligent-kalam-bfzz5?fil
 3. place it where it is intended like: `<SmoothNumber value={/*sth*/} />`
 
 > Attention: each release comes with `-compact` version which doesn't include `readme.md` thus 
-half size of regualr package; and can be installed manually using latest version number plus `-compact` for example `yarn add react-number-animator@1.1.4-compact`
+half size of regualr package; and can be installed manually using latest version number plus `-compact` for example `yarn add react-number-animator@1.1.5-compact`
 
 ## Props:
 | name| type | Required| default|
