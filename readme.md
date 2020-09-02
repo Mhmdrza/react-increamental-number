@@ -20,20 +20,12 @@ demo source : [codesandbox](https://codesandbox.io/s/intelligent-kalam-bfzz5?fil
 half size of regualr package; and can be installed manually using latest version number plus `-compact` for example `yarn add react-number-animator@1.1.5-compact`
 
 ## Props:
-| name| type | Required| default|
-|-----|------|---------|--------|
-| value| number |   **yes**|
-|totalSteps|number|no|`10`
-|className|string|no|             
-|outputFormatter| function| no| `(v)=>v`
-### Props description:
-**value** : the number you want to show.
-
-**totalSteps** : number of steps to do the animation. the higher the number the longer animation duration.
-
-**className**: optional className to apply on output `<span>`.
-
-**outputFormatter**: A function that is applied on each frame output; with this signature: `( val : number ) => string`. commonly used to format number in a local formats like showing a comma separated value instead of raw numbers in a banking scenario.
+| name| type | Required| default| description
+|-----|------|---------|--------|-----------|
+| value| number |   **yes**||the number you want to show.|
+|totalSteps|number|no|`10`|number of steps to do the animation. the higher the number the longer animation duration.
+|className|string|no||optional className to apply on output `<span>`.       
+|outputFormatter| function| no| `(v)=>v`|A function that is applied on each frame output; with this signature: `( val : number ) => string`. commonly used to format number in a local formats like showing a comma separated value instead of raw numbers in a banking scenario.|
 
 ## Example:
 ```jsx
